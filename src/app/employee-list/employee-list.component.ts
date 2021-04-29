@@ -1,3 +1,4 @@
+import { PropertyRead } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee} from '../employee'
@@ -11,6 +12,9 @@ import { EmployeeService } from '../employee.service'
 export class EmployeeListComponent implements OnInit {
 
   employees!: Employee[];
+  searchValue!: string;
+  isDesc:boolean = false;
+  showData: any;
 
   constructor(private employeeService: EmployeeService,private router: Router) { }
 
@@ -34,4 +38,19 @@ export class EmployeeListComponent implements OnInit {
       this.getEmployees();
     })
   }
+  sortName(property: string | number){
+    this.isDesc = ! this.isDesc;
+    let direction=this.isDesc ? 1: -1
+    this.showData.sort(function(a: { [x: string]: number; },b: { [x: string]: number; }){
+      if(a[property] < b[property]){
+        return -1 * direction;
+      }
+      else if (a[property] > b[property ]){
+        return 1 * direction; 
+      }else{
+        return 0;
+      }
+    });
+  }
+  
 }

@@ -8,6 +8,8 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { EmployeeDetailsDataComponent } from './employee-details-data/employee-details-data.component';
+import { EmployeeFilterPipe } from './employee-filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { EmployeeDetailsDataComponent } from './employee-details-data/employee-d
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
     EmployeeDetailsDataComponent,
+    EmployeeFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,30 @@
 <h2>Employee List</h2>
+<div class="col-md-8">
+    <div class="form-group">
+        <input type="searchValue" class="form-control" id="Search=" 
+        placeholder="searchValue" [(ngModel)]="searchValue" >
+      </div>    
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>First Name</th>
+            <th (click) = "sortName('sortName')">First Name</th>
             <th>Last Name</th>
             <th>Email Id</th>
+            <th>City</th>
+            <th>Date Of Birth</th>
+            <th>Date of Joining</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of employees">
+        <tr *ngFor = "let employee of employees | employeeFilter:searchValue">
             <td>{{employee.firstName}}</td>
             <td>{{employee.lastName}}</td>
             <td>{{employee.emailId}}</td>
+            <td>{{employee.city}}</td>
+            <td>{{employee.dob}}</td>
+            <td>{{employee.doj}}</td>
             <td>
                 <button (click) = "updateEmployee(employee.id)" class="btn btn-info"> Update</button>
                 <button (click) = "deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px"> Delete</button>
