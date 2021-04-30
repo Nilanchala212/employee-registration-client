@@ -27,4 +27,8 @@ export class EmployeeService {
   deleteEmployee(id: number): Observable<Object>{
     return this.HttpClient.delete(`${this.baseURL}/${id}`);
 }
+sortByDob(): Observable<object>{
+  return this.HttpClient.get(`${this.baseURL +'/fetchuserbydob'}`);
+
+}
 }

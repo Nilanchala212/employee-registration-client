@@ -38,6 +38,7 @@ export class EmployeeListComponent implements OnInit {
       this.getEmployees();
     })
   }
+  
   sortName(property: string | number){
     this.isDesc = ! this.isDesc;
     let direction=this.isDesc ? 1: -1

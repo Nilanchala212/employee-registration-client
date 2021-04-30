@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { EmployeeDetailsDataComponent } from './employee-details-data/employee-details-data.component';
 import { EmployeeFilterPipe } from './employee-filter.pipe';
+import { SortDobComponent } from './sort-dob/sort-dob.component';
+import { DobFilterPipe } from './dob-filter.pipe';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { EmployeeFilterPipe } from './employee-filter.pipe';
     UpdateEmployeeComponent,
     EmployeeDetailsDataComponent,
     EmployeeFilterPipe,
+    SortDobComponent,
+    DobFilterPipe,
   ],
   imports: [
     BrowserModule,
